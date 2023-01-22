@@ -7,7 +7,7 @@
 This is a WIP attempt at writing a parser function, that takes a vector of *Cepaea* phenotypes written using standard notation and gives back specific information in separate columns for further analyses.
 
 When finalized, this parser will follow the *Cepaea* morph notation as synthesized in:  
-Cain (1988). The scoring of polymorphic colour and pattern variation and its genetic basis in molluscan shells. *Malacologia*, 28(1-2), 1-15, available in the Biodiversity Heritage Library at https://www.biodiversitylibrary.org/item/47000#page/12/mode/1up
+Cain (1988). The scoring of polymorphic colour and pattern variation and its genetic basis in molluscan shells. *Malacologia*, 28(1-2), 1-15, available in the Biodiversity Heritage Library at https://www.biodiversitylibrary.org/item/47000#page/13/mode/1up
 
 **To do list**
 
