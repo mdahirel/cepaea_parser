@@ -16,7 +16,7 @@ This is a WIP attempt at writing a parser function in R, that takes a vector of 
 
 - Band fusions are denoted by parenthese enclosing the relevant bands, e.g. a `(12)(345)` snail has the bands 1 and 2 merged together, and separately the bands 3 to 5 merged together.
 
-- Less common (or less commonly recorded) variations, for which the notation consensus is less obvious, are currently not accounted for. They might or might not be added in the future. For now, they will either ignored or throw `NA`s if introduced, depending on the notation used. This includes lip coloration variation, or less pigmented/unpigmented bands.
+- Less common (or less commonly recorded) variations, for which the notation consensus is less obvious, are currently not accounted for. They might or might not be added in the future. For now, they will either be ignored or throw `NA`s if introduced, depending on the notation used. This includes lip coloration variation, or less pigmented/unpigmented bands.
 
 ## References
 The parser takes its rules about *Cepaea* morph notation from:  
