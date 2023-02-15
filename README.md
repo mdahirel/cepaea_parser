@@ -1,6 +1,6 @@
 # A parser for *Cepaea* colour data
 
-*Cepaea* snails have been used as models in evolutionary biology a lot, in no small part due to their shell colour polymorphism, which is (almost) entirely driven by genetic variation, with no substantiated evidence of phenotypic plasticity so far.  
+*Cepaea* snails have been used as models in evolutionary biology a lot, in no small part due to their shell colour polymorphism, which is (almost?) entirely driven by genetic variation, with no substantiated evidence of phenotypic plasticity so far.  
 
 *Cepaea* shell phenotype is often recorded using a standard shorthand notation that conveys information about background colour, number of bands and their location, presence of band fusions...  
 
