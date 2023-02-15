@@ -35,6 +35,24 @@ cepaea_parser <- function(string) {
   )
   
   nband.string <- gsub("[0]|[A-Z]|[()]", "", string)
+  
+  #check for band numbers in right order and right location (needs the version with the 0 to do it right)
+  
+  band.locations =NA
+  
+  for(i in 1:length(string)){
+    band.locations[i] = paste(unlist(gregexpr("[1-5]",n.bandslots[i])),collapse="")
+  }
+  
+  badstring <- case_when(
+    band.locations== gsub("[^1-5]","",nband.string) ~ badstring,
+    band.locations == "-1" ~ badstring, 
+    # - 1 mean no band; this can include errors (but we're gonna assume they're caught elsewhere)
+    # or a string with only 0 : or ., and that's very much a valid string we want to keep
+    TRUE ~ TRUE
+  )
+  
+  
   nbands <- nchar(nband.string)
   nbands.punctuate <- nchar(gsub("[0-5]|[.]", "", nband.string)) # keeps only :
   nbands.partial <- nchar(gsub("[0-5]|[:]", "", nband.string)) # keeps only .
