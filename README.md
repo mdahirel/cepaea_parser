@@ -2,9 +2,9 @@
 
 *Cepaea* snails have been used as models in evolutionary biology a lot, in no small part due to their shell colour polymorphism, which is (almost?) entirely driven by genetic variation, with no substantiated evidence of phenotypic plasticity so far.  
 
-*Cepaea* shell phenotype is often recorded using a standard shorthand notation that conveys information about background colour, number of bands and their location, presence of band fusions...  
+*Cepaea* shell phenotype is often recorded using a standard notation that conveys information about background colour, number of bands and their location, presence of band fusions...  
 
-This is a WIP attempt at writing a parser function in R, that takes a vector of *Cepaea* phenotypes written using standard notation and gives back specific information in separate columns for further analyses.
+This is a WIP attempt at writing a parser function in R, that takes a vector of *Cepaea* phenotypes written using that standard notation and gives back specific information in separate columns for further analyses.
 
 ## On allowed morph elements
 
