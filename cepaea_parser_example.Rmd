@@ -1,0 +1,56 @@
+---
+title: "Examples and tests for the `cepaea_parser()` function"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(here)
+```
+
+We load the function:
+
+```{r}
+source("cepaea_parser.R")
+```
+
+We create a vector that contains various valid and invalid *Cepaea* phenotypes:
+```{r}
+stringtest <- c("Y12345",
+                "P123(45)",
+                "P(123)(45)",
+                "B00000",
+                "Y00345",
+                "PY12:45",
+                "DP12.45",
+                "DZ12685",
+                "Z12345",
+                "P123",
+                "Y123450"
+                )
+```
+
+
+```{r}
+cepaea_parser(stringtest)
+```
+The function will output a data frame with various columns describing separate elements of the phenotype. If an error is detected in one individual string, the function will output `NA`s for all columns for that individual, rather than trying to guess which correct-looking elements of the string are indeed correct. It will also warns the user, so that they can check their records.
+
+
+When all the elements in the input are invalid, the function throws an error instead of a warning:
+
+```{r}
+cepaea_parser("X12345")
+```
+
+```{r}
+cepaea_parser(c("Y123","Z12345"))
+```
+
+```{r}
+cepaea_parser("Y12678")
+```
+
