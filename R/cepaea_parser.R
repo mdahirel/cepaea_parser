@@ -5,11 +5,7 @@ cepaea_parser <- function(string) {
   test <- gsub("[0-5]|[:]|[.]|[PYBDL]|[()]", "", string) # only legitimate characters in a Cepaea phenotype
   badstring <- test != "" # any string that contains a non-legitimate character is bad
 
-  if (any(badstring == TRUE)) {
-    where.wrong <- which(badstring == TRUE)
-    warning("invalid character strings, NA returned")
-  }
-
+  
   # get background colour
 
   bg <- substr(string, 1, 2)
@@ -30,7 +26,15 @@ cepaea_parser <- function(string) {
 
   # get band number
 
-  nband.string <- gsub("[A-Z]|[()]", "", string)
+    
+  # check for string with wrong number of band characters
+  n.bandslots <- gsub("[A-Z]|[()]", "", string)
+  badstring <- case_when(
+    nchar(n.bandslots) == 5 ~ badstring,
+    TRUE ~ TRUE
+  )
+  
+  nband.string <- gsub("[0]|[A-Z]|[()]", "", string)
   nbands <- nchar(nband.string)
   nbands.punctuate <- nchar(gsub("[0-5]|[.]", "", nband.string)) # keeps only :
   nbands.partial <- nchar(gsub("[0-5]|[:]", "", nband.string)) # keeps only .
@@ -49,6 +53,10 @@ cepaea_parser <- function(string) {
 
   data <- data.frame(
     string = string,
+    morph = case_when(
+      badstring == TRUE ~ NA_character_,
+      TRUE ~ string
+    ),
     col = case_when(
       badstring == TRUE ~ NA_character_,
       TRUE ~ bg.main
@@ -75,5 +83,15 @@ cepaea_parser <- function(string) {
     )
   )
 
+
+  if (all(badstring == TRUE)) {
+    stop("all character strings in input are invalid")
+  }
+  
+  if (any(badstring == TRUE)) {
+    warning("invalid character strings detected, NA returned")
+  }
+  
+  
   return(data)
 }
