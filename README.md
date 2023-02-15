@@ -10,7 +10,7 @@ This is a WIP attempt at writing a parser function in R, that takes a vector of 
 
 - There are 3 background colours allowed, yellow `Y`, pink `P` and brown `B`. Modifiers to these colours are allowed: `P` or `L` (for "pale" and "light") to denote lighter colours (e.g. `PB`,`LB`), `D` to denote darker colours (e.g. `DP`). See https://doi.org/10.1038/s41437-019-0189-z for data showing that background colour variation may be better described as continuous; the classical yellow-pink-brown discretization still remains valuable nonetheless, if only for comparisons with historical studies.
 
-- As is usual is *Cepaea* notation, absent bands are denoted by `0` where the band should be; `Y00345` is a valid string for a yellow shell with 3 bands, `Y345` is **not**.
+- As is usual for *Cepaea* notation, absent bands are denoted by `0` where the band should be; `Y00345` is a valid string for a yellow shell with 3 bands, `Y345` is **not**.
 
 - Punctuate bands are allowed as `:`, and periods `.` can be used as indicator of partial bands, that are only visible just before the lip.
 
