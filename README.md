@@ -17,7 +17,7 @@ This is a WIP attempt at writing a parser function in R, that takes a vector of 
 ## References
 The parser takes its rules about *Cepaea* morph notation from:  
  - Cain (1988). The scoring of polymorphic colour and pattern variation and its genetic basis in molluscan shells. *Malacologia*, 28(1-2), 1-15. Available in the Biodiversity Heritage Library at https://www.biodiversitylibrary.org/item/47000#page/13/mode/1up
- - Jackson, Larsson & Davison (2021). Quantitative measures and 3D shell models reveal interactions between bands and their position on growing snail shells. Ecology and Evolution, 11: 6634-6648. https://doi.org/10.1002/ece3.7517 
+ - Jackson, Larsson & Davison (2021). Quantitative measures and 3D shell models reveal interactions between bands and their position on growing snail shells. *Ecology and Evolution*, 11: 6634-6648. https://doi.org/10.1002/ece3.7517 
 
 ## To-do list
 
