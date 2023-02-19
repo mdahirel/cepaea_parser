@@ -2,8 +2,10 @@ cepaea_parser <- function(string) {
   require(stringr)
   require(dplyr)
 
-  test <- gsub("[0-5]|[:]|[.]|[PYBDL]|[()]", "", string) # only legitimate characters in a Cepaea phenotype
-  badstring <- test != "" # any string that contains a non-legitimate character is bad
+  # baseline test for non-suitable strings
+  test <- gsub("[0-5]|[:]|[.]|[PYBDL]|[()]", "", string)
+  badstring <- test != "" 
+  ## any string that still contains characters after all legitimate ones are removed is bad
 
   
   # get background colour
